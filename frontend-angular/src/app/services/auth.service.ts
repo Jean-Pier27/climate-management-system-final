@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  private API_URL = 'http://localhost:3000/api/auth';
+  private API_URL = 'http://climate-management-system-final.onrender.com/api/auth';
 
   async login(email: string, password: string): Promise<boolean> {
     const response = await fetch(`${this.API_URL}/login`, {

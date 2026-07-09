@@ -1,7 +1,6 @@
 import type { ClimateRecord } from "../models/ClimateRecord";
 
-const API_URL = "http://localhost:3000/api/climate";
-
+const API_URL = 'http://climate-management-system-final.onrender.com/api/auth';
 function getHeaders() {
   const token =
     typeof window !== "undefined" ? localStorage.getItem("token") : null;

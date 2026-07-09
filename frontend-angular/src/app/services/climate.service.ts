@@ -10,7 +10,7 @@ import { ClimateRecord } from '../models/climate-record';
 export class ClimateService {
   private http = inject(HttpClient);
 
-  private apiUrl = 'http://localhost:3000/api/climate';
+  private API_URL = 'http://climate-management-system-final.onrender.com/api/auth';
 
   private getHeaders(): HttpHeaders {
     const token = localStorage.getItem('token');

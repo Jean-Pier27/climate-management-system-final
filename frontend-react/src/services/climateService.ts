@@ -1,7 +1,7 @@
 import type { ClimateRecord } from "../models/ClimateRecord";
 import { getToken } from "./authService";
 
-const API_URL = "http://localhost:3000/api/climate";
+const private API_URL = 'http://climate-management-system-final.onrender.com/api/auth';
 
 function getHeaders() {
   const token = getToken();

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Gestión Climática</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>🌦 Sistema de Gestión Climática</h1>
+
+    <div class="dashboard">
+      <div class="card">
+        <h3>Total Registros</h3>
+        <span id="totalRecords">0</span>
+      </div>
+
+      <div class="card">
+        <h3>Temperatura Promedio</h3>
+        <span id="avgTemp">0°C</span>
+      </div>
+
+      <div class="card">
+        <h3>Humedad Promedio</h3>
+        <span id="avgHumidity">0%</span>
+      </div>
+    </div>
+
+    <!-- ALERTAS -->
+    <div class="alerts-card">
+
+    <div class="alerts-header">
+      <h2>⚠ Alertas Climáticas</h2>
+    </div>
+  
+    <div id="alerts"></div>
+  
+  </div>
+  
+    <form id="climateForm">
+      <input type="hidden" id="recordId" />
+
+      <input type="text" id="city" placeholder="Ciudad" required />
+
+      <input
+        type="number"
+        id="temperature"
+        placeholder="Temperatura"
+        required
+      />
+
+      <input type="number" id="humidity" placeholder="Humedad" required />
+
+      <input type="number" id="pressure" placeholder="Presión" required />
+
+      <button type="submit">Guardar Registro</button>
+    </form>
+
+    <hr />
+
+    <h2>Registros Climáticos</h2>
+
+    <input type="text" id="searchCity" placeholder="🔍 Buscar ciudad..." />
+
+    <table>
+      <thead>
+        <tr>
+          <th>Ciudad</th>
+          <th>Temperatura</th>
+          <th>Humedad</th>
+          <th>Presión</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody id="recordsTable"></tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>

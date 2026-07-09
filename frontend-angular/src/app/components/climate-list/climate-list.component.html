@@ -1,0 +1,68 @@
+<app-dashboard [records]="records"></app-dashboard>
+
+<app-alerts [records]="records"></app-alerts>
+
+<app-climate-form
+  [selectedRecord]="selectedRecord"
+  (recordCreated)="createRecord($event)"
+  (recordUpdated)="updateRecord($event)">
+</app-climate-form>
+
+
+<div class="card shadow">
+  <div class="card-header bg-dark text-white fw-bold">
+    📋 Registros Climáticos
+  </div>
+
+  <div class="card-body table-responsive">
+    <div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="🔍 Buscar ciudad..."
+    [(ngModel)]="searchText"
+  />
+</div>
+    <table class="table table-striped table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Ciudad</th>
+          <th>Temperatura</th>
+          <th>Humedad</th>
+          <th>Presión</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let record of filteredRecords">
+          <td>{{ record.id }}</td>
+          <td>{{ record.city }}</td>
+          <td>{{ record.temperature }} °C</td>
+          <td>{{ record.humidity }} %</td>
+          <td>{{ record.pressure }} hPa</td>
+          <td>{{ record.date | date:'dd/MM/yyyy HH:mm' }}</td>
+
+          <td>
+
+            <button
+             type="button"
+             class="btn btn-warning btn-sm me-2"
+            (click)="editRecord(record)">
+              Editar
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="deleteRecord(record.id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

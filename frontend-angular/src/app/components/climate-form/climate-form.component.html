@@ -1,0 +1,35 @@
+<div class="card shadow mb-4">
+  <div class="card-header bg-primary text-white fw-bold">
+    {{ selectedRecord ? '✏️ Editar Registro Climático' : '📝 Nuevo Registro Climático' }}
+  </div>
+
+  <div class="card-body">
+    <form (ngSubmit)="saveRecord()">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Ciudad</label>
+          <input type="text" class="form-control" name="city" [(ngModel)]="city" required />
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Temperatura</label>
+          <input type="number" class="form-control" name="temperature" [(ngModel)]="temperature" required />
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Humedad</label>
+          <input type="number" class="form-control" name="humidity" [(ngModel)]="humidity" required />
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Presión</label>
+          <input type="number" class="form-control" name="pressure" [(ngModel)]="pressure" required />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">
+        {{ selectedRecord ? 'Actualizar Registro' : 'Guardar Registro' }}
+      </button>
+    </form>
+  </div>
+</div>

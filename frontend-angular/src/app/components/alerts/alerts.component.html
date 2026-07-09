@@ -1,0 +1,19 @@
+<div class="card shadow mb-4">
+  <div class="card-header bg-warning fw-bold">
+    ⚠ Alertas Climáticas
+  </div>
+
+  <div class="card-body">
+    @if (alerts.length === 0) {
+      <div class="alert alert-success mb-0">
+        ✅ No hay alertas climáticas.
+      </div>
+    } @else {
+      @for (alert of alerts; track alert) {
+        <div class="alert alert-danger">
+          {{ alert }}
+        </div>
+      }
+    }
+  </div>
+</div>

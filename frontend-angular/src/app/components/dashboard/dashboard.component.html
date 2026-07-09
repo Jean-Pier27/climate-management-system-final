@@ -1,0 +1,51 @@
+<div class="row mb-4">
+
+  <div class="col-md-4 mb-3">
+    <div class="card text-white bg-primary shadow">
+      <div class="card-body text-center">
+
+        <h5 class="card-title">
+          📋 Total de Registros
+        </h5>
+
+        <h2>
+          {{ totalRecords }}
+        </h2>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card text-white bg-success shadow">
+      <div class="card-body text-center">
+
+        <h5 class="card-title">
+          🌡 Temperatura Promedio
+        </h5>
+
+        <h2>
+          {{ averageTemperature | number:'1.1-1' }} °C
+        </h2>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card text-white bg-info shadow">
+      <div class="card-body text-center">
+
+        <h5 class="card-title">
+          💧 Humedad Promedio
+        </h5>
+
+        <h2>
+          {{ averageHumidity | number:'1.1-1' }} %
+        </h2>
+
+      </div>
+    </div>
+  </div>
+
+</div>

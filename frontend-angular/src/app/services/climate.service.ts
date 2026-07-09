@@ -21,31 +21,31 @@ export class ClimateService {
   }
 
   getAll(): Observable<ClimateRecord[]> {
-    return this.http.get<ClimateRecord[]>(this.apiUrl, {
+    return this.http.get<ClimateRecord[]>(this.API_URL, {
       headers: this.getHeaders(),
     });
   }
 
   getById(id: number): Observable<ClimateRecord> {
-    return this.http.get<ClimateRecord>(`${this.apiUrl}/${id}`, {
+    return this.http.get<ClimateRecord>(`${this.API_URL}/${id}`, {
       headers: this.getHeaders(),
     });
   }
 
   create(record: Omit<ClimateRecord, 'id'>): Observable<ClimateRecord> {
-    return this.http.post<ClimateRecord>(this.apiUrl, record, {
+    return this.http.post<ClimateRecord>(this.API_URL, record, {
       headers: this.getHeaders(),
     });
   }
 
   update(id: number, record: ClimateRecord): Observable<ClimateRecord> {
-    return this.http.put<ClimateRecord>(`${this.apiUrl}/${id}`, record, {
+    return this.http.put<ClimateRecord>(`${this.API_URL}/${id}`, record, {
       headers: this.getHeaders(),
     });
   }
 
   delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`, {
+    return this.http.delete<void>(`${this.API_URL}/${id}`, {
       headers: this.getHeaders(),
     });
   }
